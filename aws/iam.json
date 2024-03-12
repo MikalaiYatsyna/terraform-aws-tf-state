@@ -67,7 +67,8 @@
         "s3:DeleteBucket",
         "s3:PutBucketTagging",
         "s3:PutBucketAcl",
-        "s3:PutBucketOwnershipControls"
+        "s3:PutBucketOwnershipControls",
+        "s3:GetBucketOwnershipControls"
       ],
       "Resource": [
         "arn:aws:s3:::*"
