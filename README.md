@@ -13,8 +13,6 @@ The following IAM policy needs to be attached to the role that is assumed during
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "DynamoDB",
-      "Effect": "Allow",
       "Action": [
         "dynamodb:CreateTable",
         "dynamodb:DescribeTable",
@@ -25,13 +23,10 @@ The following IAM policy needs to be attached to the role that is assumed during
         "dynamodb:TagResource",
         "dynamodb:UpdateContinuousBackups"
       ],
-      "Resource": [
-        "arn:aws:dynamodb:us-east-2:044964284165:table/tf_state_lock"
-      ]
+      "Resource": "arn:aws:dynamodb:{{Region}}:{{AccountId}}:table/*",
+      "Effect": "Allow"
     },
     {
-      "Sid": "KMS",
-      "Effect": "Allow",
       "Action": [
         "kms:ListAliases",
         "kms:TagResource",
@@ -45,13 +40,10 @@ The following IAM policy needs to be attached to the role that is assumed during
         "kms:CreateAlias",
         "kms:DeleteAlias"
       ],
-      "Resource": [
-        "*"
-      ]
+      "Resource": "*",
+      "Effect": "Allow"
     },
     {
-      "Sid": "S3",
-      "Effect": "Allow",
       "Action": [
         "s3:CreateBucket",
         "s3:PutBucketPolicy",
@@ -78,15 +70,13 @@ The following IAM policy needs to be attached to the role that is assumed during
         "s3:DeleteBucket",
         "s3:PutBucketTagging",
         "s3:PutBucketAcl",
-        "s3:PutBucketOwnershipControls"
+        "s3:PutBucketOwnershipControls",
+        "s3:GetBucketOwnershipControls"
       ],
-      "Resource": [
-        "arn:aws:s3:::*"
-      ]
+      "Resource": "arn:aws:s3:::*",
+      "Effect": "Allow"
     },
     {
-      "Sid": "IAM",
-      "Effect": "Allow",
       "Action": [
         "iam:GetPolicy",
         "iam:GetPolicyVersion",
@@ -97,9 +87,8 @@ The following IAM policy needs to be attached to the role that is assumed during
         "iam:CreatePolicy",
         "iam:TagPolicy"
       ],
-      "Resource": [
-        "arn:aws:iam::044964284165:policy/*"
-      ]
+      "Resource": "arn:aws:iam::{{AccountId}}:policy/*",
+      "Effect": "Allow"
     }
   ]
 }
