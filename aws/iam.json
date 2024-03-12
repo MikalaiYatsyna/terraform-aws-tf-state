@@ -1,14 +1,3 @@
-## Introduction
-Terraform module to provision S3 bucket and DynamoDB table for terraform state management.
-
-<!-- BEGIN_TF_DOCS -->
-
-
-## Prerequisites
-
-The following IAM policy needs to be attached to the role that is assumed during the creation of module resources:
-
-```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -103,20 +92,3 @@ The following IAM policy needs to be attached to the role that is assumed during
     }
   ]
 }
-```
-
-## Providers
-
-No providers.
-## Outputs
-
-No outputs.
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_tf_state_lock_table_name"></a> [tf\_state\_lock\_table\_name](#input\_tf\_state\_lock\_table\_name) | Name of DynamoDB table for state lock | `string` | `"tf_state_lock"` | no |
-| <a name="input_tf_state_s3_bucket_name"></a> [tf\_state\_s3\_bucket\_name](#input\_tf\_state\_s3\_bucket\_name) | Name of S3 bucket where Terraform state will be stored | `string` | n/a | yes |
-
-
-<!-- END_TF_DOCS -->
