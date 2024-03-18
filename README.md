@@ -92,7 +92,6 @@ The following IAM policy needs to be attached to the role that is assumed during
     }
   ]
 }
-
 ```
 
 ## Providers
