@@ -23,7 +23,7 @@ The following IAM policy needs to be attached to the role that is assumed during
         "dynamodb:TagResource",
         "dynamodb:UpdateContinuousBackups"
       ],
-      "Resource": "arn:aws:dynamodb:*:{{AWS::AccountId}}:table/*",
+      "Resource": "arn:aws:dynamodb:*:${AWS::AccountId}:table/*",
       "Effect": "Allow"
     },
     {
@@ -87,12 +87,11 @@ The following IAM policy needs to be attached to the role that is assumed during
         "iam:CreatePolicy",
         "iam:TagPolicy"
       ],
-      "Resource": "arn:aws:iam::{{AWS::AccountId}}:policy/*",
+      "Resource": "arn:aws:iam::${AWS::AccountId}:policy/*",
       "Effect": "Allow"
     }
   ]
 }
-
 ```
 
 ## Providers
