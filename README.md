@@ -94,17 +94,30 @@ The following IAM policy needs to be attached to the role that is assumed during
 }
 ```
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.7.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.42.0 |
 ## Providers
 
 No providers.
-## Outputs
+## Modules
 
-No outputs.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_remote-state-s3-backend"></a> [remote-state-s3-backend](#module\_remote-state-s3-backend) | nozaq/remote-state-s3-backend/aws | 1.6.0 |
+## Resources
+
+No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_tf_state_lock_table_name"></a> [tf\_state\_lock\_table\_name](#input\_tf\_state\_lock\_table\_name) | Name of DynamoDB table for state lock | `string` | `"tf_state_lock"` | no |
 | <a name="input_tf_state_s3_bucket_name"></a> [tf\_state\_s3\_bucket\_name](#input\_tf\_state\_s3\_bucket\_name) | Name of S3 bucket where Terraform state will be stored | `string` | n/a | yes |
- 
+## Outputs
+
+No outputs.
 <!-- END_TF_DOCS -->
