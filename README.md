@@ -106,6 +106,5 @@ No outputs.
 |------|-------------|------|---------|:--------:|
 | <a name="input_tf_state_lock_table_name"></a> [tf\_state\_lock\_table\_name](#input\_tf\_state\_lock\_table\_name) | Name of DynamoDB table for state lock | `string` | `"tf_state_lock"` | no |
 | <a name="input_tf_state_s3_bucket_name"></a> [tf\_state\_s3\_bucket\_name](#input\_tf\_state\_s3\_bucket\_name) | Name of S3 bucket where Terraform state will be stored | `string` | n/a | yes |
-
-
+ 
 <!-- END_TF_DOCS -->
